@@ -23,9 +23,11 @@
     "@nestjs/common": "^9.4.3",
     "@nestjs/core": "^9.4.3",
     "@nestjs/platform-express": "^9.4.3",
+    "@types/uuid": "^9.0.2",
     "lodash": "^4.17.21",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^9.5.0",
