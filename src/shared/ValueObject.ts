@@ -1,29 +1,15 @@
-import _ from 'lodash';
+export class ValueObject<T> {
+  protected value: T;
 
-export interface ValueObjectProps {
-  [index: string]: any;
-}
-
-export abstract class ValueObject<T extends ValueObjectProps> {
-  public readonly props: T;
-
-  constructor(props: T) {
-    this.props = props;
-
-    this.validate(props);
+  constructor(value: T) {
+    this.value = value;
   }
 
-  abstract validate(props: T): void;
+  public equals(valueObject: ValueObject<T>): boolean {
+    return this.value === valueObject.getValue;
+  }
 
-  public equals(vo?: ValueObject<T>): boolean {
-    if (vo === null || vo === undefined) {
-      return false;
-    }
-
-    if (vo.props === undefined) {
-      return false;
-    }
-
-    return _.isEqual(this.props, vo.props);
+  get getValue(): T {
+    return this.value;
   }
 }
