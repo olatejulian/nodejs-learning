@@ -22,6 +22,7 @@
   "dependencies": {
     "@nestjs/common": "^9.4.3",
     "@nestjs/core": "^9.4.3",
+    "@nestjs/jwt": "^10.1.0",
     "@nestjs/platform-express": "^9.4.3",
     "@nestjs/swagger": "^7.1.8",
     "@types/bcrypt": "^5.0.0",
