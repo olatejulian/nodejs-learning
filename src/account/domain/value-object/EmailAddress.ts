@@ -2,7 +2,7 @@ import { ValueObject } from 'src/shared';
 import validator from 'validator';
 
 export class InvalidEmailAddressError extends Error {
-  constructor(message: string) {
+  constructor(message?: string) {
     super(message);
 
     this.name = 'InvalidEmailAddressError';
@@ -10,7 +10,7 @@ export class InvalidEmailAddressError extends Error {
 }
 
 export class EmailAddress extends ValueObject<string> {
-  private static readonly EMAIL_IS_INVALID = (email) =>
+  private static readonly EMAIL_IS_INVALID = (email: string) =>
     `${email} is invalid email address`;
 
   constructor(value: string) {

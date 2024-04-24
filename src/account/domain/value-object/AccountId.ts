@@ -10,7 +10,7 @@ export class InvalidAccountIdError extends Error {
 
 export class AccountId extends ValueObject<string> {
   private static readonly MUST_BE_VALID_UUID_STRING =
-    'Must be a valid UUID string';
+    'Account ID Must be a valid UUID string';
 
   constructor(value: string) {
     AccountId.validate(value);

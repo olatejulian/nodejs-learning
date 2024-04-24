@@ -11,9 +11,10 @@ export class AccountName extends ValueObject<string> {
   private static readonly MIN_LENGTH = 3;
   private static readonly MAX_LENGTH = 20;
 
-  private static readonly MUST_BE_A_DEFINED_STRING = 'Must be a defined string';
-  private static readonly MUST_HAVE_AT_LEAST_X_CHARACTERS = `Must have at least ${AccountName.MIN_LENGTH} characters`;
-  private static readonly MUST_HAVE_AT_MOST_X_CHARACTERS = `Must have at most ${AccountName.MAX_LENGTH} characters`;
+  private static readonly MUST_BE_A_DEFINED_STRING =
+    'Account name must be a defined string';
+  private static readonly MUST_HAVE_AT_LEAST_X_CHARACTERS = `Account name must have at least ${AccountName.MIN_LENGTH} characters`;
+  private static readonly MUST_HAVE_AT_MOST_X_CHARACTERS = `Account name must have at most ${AccountName.MAX_LENGTH} characters`;
 
   constructor(value: string) {
     AccountName.validate(value);

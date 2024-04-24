@@ -3,7 +3,7 @@ import { compare, hash } from 'bcrypt';
 import { ValueObject } from 'src/shared';
 
 export class InvalidPasswordError extends Error {
-  constructor(message) {
+  constructor(message?: string) {
     super(message);
     this.name = 'InvalidPasswordError';
   }
@@ -12,12 +12,13 @@ export class InvalidPasswordError extends Error {
 export class Password extends ValueObject<string> {
   private static readonly MIN_LENGTH = 8;
 
-  private static readonly MUST_BE_A_DEFINED_STRING = 'Must be a defined string';
+  private static readonly MUST_BE_A_DEFINED_STRING =
+    'Password must be a defined string';
 
-  private static readonly MUST_BE_AT_LEAST_X_CHARACTERS = `Must have at least ${Password.MIN_LENGTH} characters`;
+  private static readonly MUST_BE_AT_LEAST_X_CHARACTERS = `Password must have at least ${Password.MIN_LENGTH} characters`;
 
   private static readonly MUST_BE_VALID_FORMAT =
-    'Must be at least 1 uppercase, 1 lowercase, 1 number and 1 special character';
+    'Password must be at least 1 uppercase, 1 lowercase, 1 number and 1 special character';
 
   private readonly SALT = 10;
 
