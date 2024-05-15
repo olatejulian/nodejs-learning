@@ -1,0 +1,7 @@
+{
+  "workspaces": [
+    "src/*"
+  ],
+  "author": "olatejulian <julian.lf.olate@gmail.com>",
+  "license": "MIT"
+}
