@@ -1,15 +1,15 @@
 export class ValueObject<T> {
-  protected value: T;
+    protected value: T
 
-  constructor(value: T) {
-    this.value = value;
-  }
+    constructor(value: T) {
+        this.value = value
+    }
 
-  public equals(valueObject: ValueObject<T>): boolean {
-    return this.value === valueObject.getValue;
-  }
+    public equals(valueObject: ValueObject<T>): boolean {
+        return this.value === valueObject.getValue
+    }
 
-  get getValue(): T {
-    return this.value;
-  }
+    get getValue(): T {
+        return this.value
+    }
 }

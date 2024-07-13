@@ -1,1 +1,1 @@
-export * from './ValueObject';
+export * from './ValueObject'

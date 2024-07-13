@@ -1,1 +1,1 @@
-export * from './with-refresh-token.middleware';
+export * from './with-refresh-token.middleware'
