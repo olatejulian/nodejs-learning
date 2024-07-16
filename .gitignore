@@ -1,43 +1,32 @@
-# compiled output
-/dist
-/node_modules
-
-# Logs
-logs
-*.log
-npm-debug.log*
-pnpm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
-
-# OS
-.DS_Store
-
-# Tests
-/coverage
-/.nyc_output
-
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-
-# IDE - VSCode
-.vscode/
-.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
 !.vscode/settings.json
 !.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-
-# Others
-.history/
-.scannerwork/
-target/
+*.launch
+*.log
+*.sublime-workspace
+.DS_Store
+.c9/
+.classpath
 .env
 .fleet
+.history/
+.idea
+.nyc_output
+.project
+.scannerwork/
+.settings/
+.vscode/
+.vscode/*
+coverage/
+dist/
+lerna-debug.log*
+lib/
+logs
+node_modules/
+npm-debug.log*
+pnpm-debug.log*
+target/
+tsconfig.build.tsbuildinfo
+yarn-debug.log*
+yarn-error.log*
