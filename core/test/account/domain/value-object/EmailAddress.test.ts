@@ -3,10 +3,14 @@ import {EmailAddress} from '@core/account'
 describe('Email Address Unit Tests', () => {
     it('should create a valid email address', () => {
         // given
-        const emailAddress = new EmailAddress('john.doe@email.com')
+        const emailAddressString = 'john.doe@email.com'
+
+        const emailAddress = new EmailAddress(emailAddressString)
 
         // then
         expect(emailAddress.getValue).toBeDefined()
+
+        expect(emailAddress.getValue).toEqual(emailAddressString)
     })
 
     it('should throw an error when email address is invalid', () => {
