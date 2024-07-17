@@ -1,15 +1,14 @@
-import {CACHE_MANAGER, CacheModule} from '@nestjs/cache-manager'
-import {ConfigModule, ConfigService} from '@nestjs/config'
-import {JwtModule, JwtService} from '@nestjs/jwt'
-import {Test, TestingModule} from '@nestjs/testing'
+import { CACHE_MANAGER, CacheModule } from '@nestjs/cache-manager'
+import { ConfigModule, ConfigService } from '@nestjs/config'
+import { JwtModule, JwtService } from '@nestjs/jwt'
+import { Test, TestingModule } from '@nestjs/testing'
 import {
-    AccountFactory,
     AccountRepository,
-    InMemoryAccountRepository,
+    InMemoryAccountRepository
 } from '@ts-api-example/core'
-import {Cache} from 'cache-manager'
-import {AccountController} from './account.controller'
-import {AccountService} from './account.service'
+import { Cache } from 'cache-manager'
+import { AccountController } from './account.controller'
+import { AccountService } from './account.service'
 
 describe('AccountController', () => {
     let controller: AccountController
@@ -26,21 +25,18 @@ describe('AccountController', () => {
                 {
                     provide: AccountService,
                     useFactory: (
-                        factory: AccountFactory,
                         repository: AccountRepository,
                         jwtService: JwtService,
                         configService: ConfigService,
                         cacheService: Cache
                     ) =>
                         new AccountService(
-                            factory,
                             repository,
                             jwtService,
                             configService,
                             cacheService
                         ),
                     inject: [
-                        AccountFactory,
                         InMemoryAccountRepository,
                         JwtService,
                         ConfigService,
