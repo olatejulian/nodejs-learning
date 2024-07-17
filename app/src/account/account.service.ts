@@ -13,7 +13,6 @@ import {AuthenticateAccountDto, AuthTokensDto, CreateAccountDto} from './dto'
 @Injectable()
 export class AccountService {
     constructor(
-        private readonly factory: AccountFactory,
         private readonly repository: AccountRepository,
         private readonly jwtService: JwtService,
         private readonly configService: ConfigService,
@@ -23,11 +22,11 @@ export class AccountService {
     public async createAccount(
         createAccountDto: CreateAccountDto
     ): Promise<void> {
-        const {name, email, password} = createAccountDto
+        const {name, email: emailAddress, password} = createAccountDto
 
-        const account = this.factory.createAccount({
+        const account = AccountFactory.create({
             name,
-            email,
+            emailAddress,
             password,
         })
 
