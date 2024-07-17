@@ -3,7 +3,6 @@ import {Module} from '@nestjs/common'
 import {ConfigService} from '@nestjs/config'
 import {JwtModule, JwtService} from '@nestjs/jwt'
 import {
-    AccountFactory,
     AccountRepository,
     InMemoryAccountRepository,
 } from '@ts-api-example/core'
@@ -18,14 +17,12 @@ import {AccountService} from './account.service'
         {
             provide: AccountService,
             useFactory: (
-                factory: AccountFactory,
                 repository: AccountRepository,
                 jwtService: JwtService,
                 configService: ConfigService,
                 cacheService: Cache
             ) =>
                 new AccountService(
-                    factory,
                     repository,
                     jwtService,
                     configService,
