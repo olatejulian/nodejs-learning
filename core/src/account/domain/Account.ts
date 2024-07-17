@@ -1,30 +1,29 @@
 import {AccountId, AccountName, EmailAddress, Password} from './value-object'
 
-export type AccountProps = {
-    id: AccountId
-    name: AccountName
-    emailAddress: EmailAddress
-    password: Password
-    createdAt: Date
-}
-
-export type CreateAccount = {
-    name: AccountName
-    emailAddress: EmailAddress
-    password: Password
-}
-
 export class Account {
-    private props: AccountProps
-
-    constructor(props: AccountProps) {
+    constructor(
+        private readonly props: {
+            id: AccountId
+            name: AccountName
+            emailAddress: EmailAddress
+            password: Password
+            createdAt: Date
+        }
+    ) {
         this.props = props
     }
 
-    public static create(props: CreateAccount): Account {
+    public static create(values: {
+        name: AccountName
+        emailAddress: EmailAddress
+        password: Password
+    }): Account {
+        const {name, emailAddress, password} = values
         return new Account({
             id: AccountId.generateId(),
-            ...props,
+            name,
+            emailAddress,
+            password,
             createdAt: new Date(),
         })
     }
