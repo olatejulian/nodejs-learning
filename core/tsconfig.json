@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@core/*": [
+        "src/*"
+      ]
+    },
+  },
+  "extends": "./tsconfig.base.json",
+}
