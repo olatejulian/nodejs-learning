@@ -12,13 +12,18 @@
     "jest": "^29.7.0",
     "ts-jest": "^29.2.2",
     "ts-node": "^10.9.2",
+    "tsup": "^8.1.2",
     "typescript": "^5.5.3"
+  },
+  "exports": {
+    "import": "./lib/index.js",
+    "require": "./lib/index.cjs"
   },
   "main": "./lib/index.js",
   "name": "@ts-api-example/core",
   "scripts": {
-    "build": "rm -rf ./**/tsconfig.build.tsbuildinfo && tsc -p tsconfig.build.json",
-    "build:watch": "rm -rf ./**/tsconfig.build.tsbuildinfo && tsc -p tsconfig.build.json -w",
+    "build": "tsup ./src/index.ts --dts --format esm,cjs --out-dir ./lib --tsconfig tsconfig.build.json",
+    "build:watch": "pnpm build --watch",
     "test": "jest"
   },
   "type": "module",
