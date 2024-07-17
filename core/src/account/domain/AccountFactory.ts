@@ -2,7 +2,7 @@ import {Account} from './Account'
 import {AccountName, EmailAddress, Password} from './value-object'
 
 export class AccountFactory {
-    static create(props: {
+    public static create(props: {
         name: string
         emailAddress: string
         password: string
